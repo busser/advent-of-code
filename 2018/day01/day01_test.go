@@ -13,6 +13,7 @@ func Example() {
 	if err != nil {
 		log.Fatalf("failed to open input file: %v", err)
 	}
+	defer file.Close()
 
 	changes, err := day01.ReadFreqChanges(file)
 	if err != nil {
