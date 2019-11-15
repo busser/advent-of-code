@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/busser/advent-of-code/2018/day01"
+	"github.com/busser/adventofcode/2018/day01"
 )
 
 func Example() {
