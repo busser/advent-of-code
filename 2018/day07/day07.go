@@ -6,8 +6,6 @@ import (
 	"fmt"
 	"io"
 	"strings"
-
-	"github.com/pkg/errors"
 )
 
 // Step represents a step in the instructions.
@@ -146,7 +144,7 @@ func ReadInstructions(r io.Reader) (map[Step][]Step, error) {
 
 		_, err := fmt.Sscanf(scanner.Text(), "Step %c must be finished before step %c can begin.", &before, &after)
 		if err != nil {
-			return nil, errors.Wrap(err, "failed to parse text")
+			return nil, fmt.Errorf("failed to parse text: %w", err)
 		}
 
 		instructions[before] = append(instructions[before], after)

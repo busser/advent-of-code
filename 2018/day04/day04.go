@@ -6,8 +6,6 @@ import (
 	"io"
 	"sort"
 	"time"
-
-	"github.com/pkg/errors"
 )
 
 // Record represents a record written on the wall.
@@ -129,7 +127,7 @@ func ReadRecords(r io.Reader) ([]Record, error) {
 		const timeLayout = "[2006-01-02 15:04]"
 		time, err := time.Parse(timeLayout, scanner.Text()[:18])
 		if err != nil {
-			return nil, errors.Wrap(err, "failed to parse time")
+			return nil, fmt.Errorf("failed to parse time: %w", err)
 		}
 		msg := scanner.Text()[19:]
 

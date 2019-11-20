@@ -4,8 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"io"
-
-	"github.com/pkg/errors"
 )
 
 // Coordinate represents a
@@ -156,7 +154,7 @@ func ReadCoordinates(r io.Reader) ([]Coordinate, error) {
 
 		_, err := fmt.Sscanf(scanner.Text(), "%d, %d", &c.X, &c.Y)
 		if err != nil {
-			return nil, errors.Wrap(err, "failed to parse text")
+			return nil, fmt.Errorf("failed to parse text: %w", err)
 		}
 
 		coords = append(coords, c)
