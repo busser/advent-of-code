@@ -1,0 +1,57 @@
+package {{ .PackageName }}
+
+import (
+	"fmt"
+	"io"
+
+	"github.com/busser/adventofcode/util"
+)
+
+// PartOne solves the first part of the day's puzzle.
+func PartOne(w io.Writer, r io.Reader) error {
+	input, err := readInput(r)
+	if err != nil {
+		return fmt.Errorf("failed to read input: %w", err)
+	}
+
+	var answer string
+
+	// TODO: Solve the first part of the day's puzzle.
+
+	_, err = fmt.Fprintf(w, "%s", answer)
+	if err != nil {
+		return fmt.Errorf("failed to write answer: %w", err)
+	}
+
+	return nil
+}
+
+// PartTwo solves the second part of the day's puzzle.
+func PartTwo(w io.Writer, r io.Reader) error {
+	input, err := readInput(r)
+	if err != nil {
+		return fmt.Errorf("failed to read input: %w", err)
+	}
+
+	var answer string
+
+	// TODO: Solve the second part of the day's puzzle.
+
+	_, err = fmt.Fprintf(w, "%s", answer)
+	if err != nil {
+		return fmt.Errorf("failed to write answer: %w", err)
+	}
+
+	return nil
+}
+
+func readInput(r io.Reader) ([]string, error) {
+	lines, err := util.ReadLines(r)
+	if err != nil {
+		return nil, fmt.Errorf("failed to read lines: %w", err)
+	}
+
+	// TODO: Parse and structure the input for easier processing.
+
+	return lines, nil
+}
