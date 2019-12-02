@@ -9,7 +9,7 @@ import (
 
 // PartOne solves the first part of the day's puzzle.
 func PartOne(w io.Writer, r io.Reader) error {
-	input, err := readInput(r)
+	_, err := readInput(r)
 	if err != nil {
 		return fmt.Errorf("failed to read input: %w", err)
 	}
@@ -28,7 +28,7 @@ func PartOne(w io.Writer, r io.Reader) error {
 
 // PartTwo solves the second part of the day's puzzle.
 func PartTwo(w io.Writer, r io.Reader) error {
-	input, err := readInput(r)
+	_, err := readInput(r)
 	if err != nil {
 		return fmt.Errorf("failed to read input: %w", err)
 	}
