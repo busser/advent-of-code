@@ -35,6 +35,8 @@ type TestCase struct {
 // RunTest runs a test on f with the provided input. The test will fail if f
 // returns an error or if f's output does not match expectedOutput.
 func RunTest(t *testing.T, tc TestCase) {
+	t.Helper()
+
 	w := bytes.NewBuffer(nil)
 
 	input, err := ioutil.ReadFile(tc.InputPath)
@@ -63,6 +65,8 @@ type BenchmarkCase struct {
 // RunBenchmark runs a benchmark on f with the provided input.
 // RunBenchmark assumes f works as expected and will not check for correctness.
 func RunBenchmark(b *testing.B, bc BenchmarkCase) {
+	b.Helper()
+
 	w := ioutil.Discard
 
 	input, err := ioutil.ReadFile(bc.InputPath)
